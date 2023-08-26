@@ -89,10 +89,10 @@ body {
 }
 
 #test div {
-  display: grid;
-  align-content: stretch;
-  justify-content: space-evenly;
+  display: flex;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
 }
 

@@ -8,6 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 // CSS Modules, react-datepicker-cssmodules.css//
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
+import { addDays } from "date-fns";
 
 const App = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -63,7 +64,7 @@ const App = () => {
       timeArray.push(10, 12);
     }
     if (timestamp === 1692046800000) {
-      timeArray.push("12:00", "14:00", "20:00");
+      timeArray.push(10, 16, 20, 18);
     }
     console.log(timeArray);
     const element = (
@@ -98,6 +99,12 @@ const App = () => {
           }}
           disabledKeyboardNavigation
           onFocus={(e) => e.target.blur()} // <--- Adding this
+          excludeDates={[
+            new Date(1691787600000),
+            addDays(new Date(1691787600000), 1),
+            addDays(new Date(1691787600000), 2),
+            addDays(new Date(1691787600000), 4),
+          ]}
         />
       </form>
       <div id="test">
