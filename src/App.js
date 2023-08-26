@@ -67,18 +67,20 @@ const App = () => {
     }
     console.log(timeArray);
     const element = (
-      <div>
+      <>
         <h2>Select time</h2>
-        {timeArray.map((timeArray, index) => (
-          <button
-            key={index}
-            className="button-8"
-            onClick={() => fin(new Date(timestamp).setHours(timeArray))}
-          >
-            {timeArray.toString() + ":00"}
-          </button>
-        ))}
-      </div>
+        <div>
+          {timeArray.map((timeArray, index) => (
+            <button
+              key={index}
+              className="button-8"
+              onClick={() => fin(new Date(timestamp).setHours(timeArray))}
+            >
+              {timeArray.toString() + ":00"}
+            </button>
+          ))}
+        </div>
+      </>
     );
     test.render(element);
   };
@@ -97,35 +99,11 @@ const App = () => {
           disabledKeyboardNavigation
           onFocus={(e) => e.target.blur()} // <--- Adding this
         />
-        {/* <DatePicker
-          selected={""}
-          onChange={(date) => {
-            setStartDate(date);
-            console.log(new Date(startDate.setHours(0, 0, 0, 0)).getTime());
-          }}
-          showTimeSelect
-          showTimeSelectOnly
-          timeIntervals={120}
-          minTime={new Date(new Date().setHours(10, 0, 0))}
-          maxTime={new Date(new Date().setHours(20, 0, 0))}
-          excludeTimes={excluded.map((exclude, index) => {
-            console.log(exclude);
-            return new Date(
-              new Date().setHours(
-                parseInt(exclude.time.slice(0, -3)),
-                exclude.time.slice(3),
-                0
-              )
-            );
-          })}
-        /> */}
       </form>
       <div id="test">
         <span></span>
       </div>
-      <div id="result">
-        <span></span>
-      </div>
+      <div id="result"></div>
       <button className="button-8" onClick={tick} disabled={true}>
         Post
       </button>
