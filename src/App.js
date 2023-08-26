@@ -70,9 +70,7 @@ const App = () => {
             console.log(timestamp);
             tick();
           }}
-          onKeyDown={(e) => {
-            e.preventDefault();
-          }}
+          disabledKeyboardNavigation
         />
         {/* <DatePicker
           selected={""}
