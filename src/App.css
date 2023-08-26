@@ -3,3 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.react-datepicker__day--outside-month {
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.react-datepicker__time-list-item--disabled{
+  display: none;
+}
