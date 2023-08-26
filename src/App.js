@@ -50,9 +50,9 @@ const App = () => {
     console.log(timeArray);
     const element = (
       <div>
-        <h1>Select time</h1>
+        <h2>Select time</h2>
         {timeArray.map((timeArray) => (
-          <button>{timeArray}</button>
+          <button class="button-8">{timeArray}</button>
         ))}
       </div>
     );
@@ -93,14 +93,13 @@ const App = () => {
             );
           })}
         /> */}
-        <button type="submit" className="submitBtn">
-          Post"{" "}
-        </button>
       </form>
-      <button onClick={tick}>kek</button>
       <div id="test">
         <span></span>
       </div>
+      <button className="button-8" onClick={tick} disabled={true}>
+        Post
+      </button>
     </>
   );
 };
