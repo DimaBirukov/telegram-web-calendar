@@ -71,6 +71,7 @@ const App = () => {
             tick();
           }}
           disabledKeyboardNavigation
+          onFocus={(e) => e.target.blur()} // <--- Adding this
         />
         {/* <DatePicker
           selected={""}
