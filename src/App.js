@@ -40,19 +40,43 @@ const App = () => {
       date: "Wed Sep 18 2020",
     },
   ];
+  const fin = (time) => {
+    const result = ReactDOM.createRoot(document.getElementById("result"));
+
+    const element = (
+      <div>
+        <span>
+          {new Date(time).toLocaleDateString("uk-UA", {
+            hour: "2-digit",
+            minute: "2-digit",
+          })}
+        </span>
+      </div>
+    );
+    result.render(element);
+  };
   const tick = () => {
     const test = ReactDOM.createRoot(document.getElementById("test"));
     const timeArray = [];
     console.log("tick", timestamp);
     if (timestamp === 1691528400000) {
-      timeArray.push("10:00", "12:00");
+      timeArray.push(10, 12);
+    }
+    if (timestamp === 1692046800000) {
+      timeArray.push("12:00", "14:00", "20:00");
     }
     console.log(timeArray);
     const element = (
       <div>
         <h2>Select time</h2>
-        {timeArray.map((timeArray) => (
-          <button class="button-8">{timeArray}</button>
+        {timeArray.map((timeArray, index) => (
+          <button
+            key={index}
+            className="button-8"
+            onClick={() => fin(new Date(timestamp).setHours(timeArray))}
+          >
+            {timeArray.toString() + ":00"}
+          </button>
         ))}
       </div>
     );
@@ -97,6 +121,9 @@ const App = () => {
         /> */}
       </form>
       <div id="test">
+        <span></span>
+      </div>
+      <div id="result">
         <span></span>
       </div>
       <button className="button-8" onClick={tick} disabled={true}>

@@ -11,7 +11,7 @@
 
 
 .react-datepicker-wrapper {
-  margin: 50px;
+  margin: 6%;
 }
 
 #test button {
@@ -19,6 +19,7 @@
 }
 h2 {
   margin-bottom: 0;
+  margin-left: 10%
 }
 input{
   border-radius: 25px;
@@ -74,5 +75,12 @@ form {
 body {
   margin: 0;    
    padding: 0 20%;
+}
+
+#result {
+  margin-bottom: 20px
+}
+#result span{
+  margin: 10%
 }
 
